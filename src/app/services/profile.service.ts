@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProfileService {
+ 
 
   private username:string;
   private clientid = '';
@@ -30,6 +31,11 @@ export class ProfileService {
 
   updateProfile(username:string){
   	this.username = username;
+  }
+
+  getAllPost(){
+    return this.httpClient.get(`https://api.github.com/users/${this.username}`);
+
   }
 
 }
