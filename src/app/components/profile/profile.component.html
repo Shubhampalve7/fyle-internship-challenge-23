@@ -30,10 +30,10 @@
 		totalItems:count
 	  } let i=index"
         >
-	 
+	  <!-- href="{{a.html_url}}"  -->
           <td> {{a.id}}</td>
           <td> {{a.name}}</td>
-	    <td> <a href="{{a.html_url}}" target="_blank" class="btn btn-success btn-sm">View profile</a></td>
+	    <td > <p class="btn btn-success btn-sm" (click)="toggleContent()">View profile</p></td>
 	    <td> {{a.language}}</td>
         </tr>
       </tbody>
@@ -47,7 +47,7 @@
   </div>
 
 
-  <div *ngIf="profile">
+  <div  *ngIf="showContent">
     <div class="panel panel-default">
       <div class="panel-heading">
         {{ profile.name }} <small>({{ profile.login }})</small>

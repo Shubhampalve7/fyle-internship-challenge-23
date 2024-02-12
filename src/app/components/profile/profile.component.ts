@@ -12,7 +12,7 @@ export class ProfileComponent implements OnInit {
   post:any;
   page:number=1;
   count:number=0;
-  tablesize:number=10;
+  tablesize:number=5;
   tablesizes:any=[5,10,15,20];
 
 
@@ -24,6 +24,12 @@ export class ProfileComponent implements OnInit {
   //   console.log(this.post);
     
   // }
+  showContent: boolean = false;
+
+  toggleContent() {
+    this.showContent = !this.showContent;
+  }
+
   onTableDataChange(event:any){
     this.page=event
 this.findProfile()
