@@ -23,18 +23,19 @@
 	  <th>LANGUAGE</th>
       </thead>
       <tbody>
+        <!-- *ngFor="let a of profile | paginate:{
+          itemsPerPage:tablesize,
+          currentPage:page,
+          totalItems:count
+          } let i=index" -->
         <tr
-	  *ngFor="let a of repos | paginate:{
-		itemsPerPage:tablesize,
-		currentPage:page,
-		totalItems:count
-	  } let i=index"
+	
         >
-	  <!-- href="{{a.html_url}}"  -->
-          <td> {{a.id}}</td>
-          <td> {{a.name}}</td>
-	    <td > <p class="btn btn-success btn-sm" (click)="toggleContent()">View profile</p></td>
-	    <td> {{a.language}}</td>
+
+          <td> {{profile.id}}</td>
+          <td> {{profile.login}}</td>
+	    <td > <a class="btn btn-success btn-sm" (click)="toggleContent()">View profile</a></td>
+	    <td> {{profile.name}}</td>
         </tr>
       </tbody>
     </table>

@@ -20,12 +20,16 @@ export class ProfileService {
   }
 
   getProfileInfo(){
-  	return this.httpClient.get(`https://api.github.com/users/${this.username}`);
+  	// return this.httpClient.get("https://api.github.com/users/" + this.username)
+  	// return this.httpClient.get("https://api.github.com/users/" + this.username + "?client_id=" + this.clientid + "&client_secret=" + this.clientsecret)
+  	// .map(res => res.json());
+
+    return this.httpClient.get(`https://api.github.com/users/${this.username}`);
   	
   }
 
   getProfileRepos(){
-  	return this.httpClient.get("https://api.github.com/users/" + this.username + "/repos?client_id=" + this.clientid + "&client_secret=" + this.clientsecret)
+  	return this.httpClient.get("https://api.github.com/users/" + this.username + "/repos?")
   	
   }
 
@@ -33,9 +37,9 @@ export class ProfileService {
   	this.username = username;
   }
 
-  getAllPost(){
-    return this.httpClient.get(`https://api.github.com/users/${this.username}`);
+  // getAllPost(){
+  //   return this.httpClient.get(`https://api.github.com/users/${this.username}`);
 
-  }
+  // }
 
 }
