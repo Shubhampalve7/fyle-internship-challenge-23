@@ -11,6 +11,9 @@ export class ProfileService {
   private username: string;
   private clientid = '';
   private clientsecret = '';
+  static getProfileRepos: any;
+  static updateProfile: any;
+  static getProfileInfo: any;
 
   constructor(private httpClient: HttpClient) {
     console.log('service is now ready!');
