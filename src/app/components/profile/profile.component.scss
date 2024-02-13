@@ -1,18 +1,22 @@
 .search-form {
-	padding-top: 50px;
+  padding-top: 50px;
 }
-.clearfix{
-      color: blueviolet;
-      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      font-size: 20px;
+.clearfix {
+  color: blueviolet;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 20px;
 }
-.button{
-      background-color: black;
-      color: white;
-      border-radius: 5px;
-      width: 100px;
+.button {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  width: 100px;
 }
-.form-group{
-      display: flex;
-      gap: 15px;
-  }
+.form-group {
+  display: flex;
+  gap: 15px;
+}
+.th {
+  padding: 20px;
+  text-align: center;
+}

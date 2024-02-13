@@ -18,37 +18,26 @@
     <table class="table">
       <thead>
         <th>ID</th>
-        <th>NAME</th>
-	  <th>LINK</th>
-	  <th>LANGUAGE</th>
+        <th>Name</th>
+        <th>Link</th>
+        <th>Location</th>
       </thead>
       <tbody>
-        <!-- *ngFor="let a of profile | paginate:{
-          itemsPerPage:tablesize,
-          currentPage:page,
-          totalItems:count
-          } let i=index" -->
-        <tr
-	
-        >
-
-          <td> {{profile.id}}</td>
-          <td> {{profile.login}}</td>
-	    <td > <a class="btn btn-success btn-sm" (click)="toggleContent()">View profile</a></td>
-	    <td> {{profile.name}}</td>
+        <tr>
+          <td>{{ profile.id }}</td>
+          <td>{{ profile.name }}</td>
+          <td>
+            <a class="btn btn-success btn-sm" (click)="toggleContent()"
+              >View profile</a
+            >
+          </td>
+          <td>{{ profile.location }}</td>
         </tr>
       </tbody>
     </table>
-    <div>
-	<pagination-controls 
-	previousLabel="prev"
-	nextLabel="next"
-	(pageChange)="onTableDataChange($event)"></pagination-controls>
-    </div>
   </div>
 
-
-  <div  *ngIf="showContent">
+  <div *ngIf="showContent">
     <div class="panel panel-default">
       <div class="panel-heading">
         {{ profile.name }} <small>({{ profile.login }})</small>
@@ -94,6 +83,7 @@
                 <span class="label label-success"
                   >{{ profile.public_gists }} Public gists</span
                 >
+
                 <span class="label label-info"
                   >{{ profile.public_repos }} Public Repos</span
                 >
@@ -110,7 +100,20 @@
                 <div class="panel-heading">
                   <h3 class="panel-title">Repos</h3>
                 </div>
-                <div class="panel-body" *ngFor="let repo of repos">
+
+                <div
+                  class="panel-body"
+                  *ngFor="
+                    let repo of repos
+                      | paginate
+                        : {
+                            itemsPerPage: tablesize,
+                            currentPage: page,
+                            totalItems: count
+                          };
+                    let i = index
+                  "
+                >
                   <p class="clearfix">
                     {{ repo.name }}
                     <a
@@ -120,7 +123,13 @@
                       >View this project on github</a
                     >
                   </p>
-                  <!-- <p>{{repo.description}}</p> -->
+                </div>
+                <div>
+                  <pagination-controls
+                    previousLabel="prev"
+                    nextLabel="next"
+                    (pageChange)="onTableDataChange($event)"
+                  ></pagination-controls>
                 </div>
               </div>
             </div>
