@@ -1,0 +1,12 @@
+ABOUT CHALLENGE 
+- profile component is only component and profile service is the service used during this challenge
+- service get Data through API and we are using it in profile component 
+- pagination is added
+- Test case is written 
+
+  
+UI/UX
+- UI is very simple i.e. when you search in the the search-bar it shows the the respected profile
+- after clicking view details it shows the Details about profile and pagination added to repo section with max 30 size 
+  
+  
